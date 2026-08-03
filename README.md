@@ -4,7 +4,8 @@
 
 ## Git
 
-- [커밋과 푸시](Git/commit-and-push.md)
+- [작동 원리] 
+- [커밋과 푸시](Git/commit_and_push.md)
 - [브랜치 기초](Git/branch.md)
 
 ## Python
