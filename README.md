@@ -38,21 +38,21 @@
 
 ### 4장: 특이값 분해(SVD)와 행렬 분해 응용
 
-- 특이값 분해(SVD)의 구조와 원리 — 학습 내용 추가 예정
-- SVD와 PCA의 연결 및 저랭크 응용 — 학습 내용 추가 예정
-- 선형대수 종합 미니 프로젝트 — 학습 내용 추가 예정
+- [특이값 분해(SVD)의 구조와 원리](Math/4-1-svd-structure.md) — 학습 내용 추가 예정
+- [SVD와 PCA의 연결 및 저랭크 응용](Math/4-2-svd-pca-low-rank.md) — 학습 내용 추가 예정
+- [선형대수 종합 미니 프로젝트](Math/4-3-linear-algebra-mini-project.md) — 학습 내용 추가 예정
 
 ### 5장: 행렬과 텐서의 Shape
 
-- 벡터·행렬·텐서와 딥러닝 Shape 표기 — 학습 내용 추가 예정
-- `reshape`·`transpose`·`broadcasting`과 행렬곱 Shape 추론 — 학습 내용 추가 예정
+- [벡터·행렬·텐서와 딥러닝 Shape 표기](Math/5-1-vector-matrix-tensor-shape.md) — 학습 내용 추가 예정
+- [`reshape`·`transpose`·`broadcasting`과 행렬곱 Shape 추론](Math/5-2-reshape-transpose-broadcasting.md) — 학습 내용 추가 예정
 
 ### 6장: Attention 수식과 Softmax 기초
 
-- Attention Score: 내적과 QKᵀ Shape 추론 — 학습 내용 추가 예정
-- Softmax 로그확률과 Cross Entropy — 학습 내용 추가 예정
+- [Attention Score: 내적과 QKᵀ Shape 추론](Math/6-1-attention-score-qkt.md) — 학습 내용 추가 예정
+- [Softmax 로그확률과 Cross Entropy](Math/6-2-softmax-cross-entropy.md) — 학습 내용 추가 예정
 
 ### 7장: 미분·그래디언트·체인룰과 학습
 
-- 미분·편미분·Gradient와 Gradient Descent — 학습 내용 추가 예정
-- Chain Rule과 Backpropagation 직관 — 학습 내용 추가 예정
+- [미분·편미분·Gradient와 Gradient Descent](Math/7-1-gradient-descent.md) — 학습 내용 추가 예정
+- [Chain Rule과 Backpropagation 직관](Math/7-2-chain-rule-backpropagation.md) — 학습 내용 추가 예정
