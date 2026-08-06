@@ -15,8 +15,44 @@
 - [문자열](Python/3-String.md) — `2026-08-04`
 - [조건문](Python/4-Conditional.md) — `2026-08-04`
 
-
 ## 기초 수학
 
-- [벡터와 L2 정규화](Math/vector-normalization.md) — `2026-08-05`
-- 학습 내용 추가 예정 — `2026-08-06`
+### 1장: 벡터와 행렬 연산
+
+- [벡터의 수학적 정의와 기하학적 해석](Math/1-1-vector-definition.md) — `2026-08-05`
+- [내적과 코사인 유사도](Math/1-2-dot-product-cosine-similarity.md) — `2026-08-05`
+- [행렬 연산과 딥러닝 레이어](Math/1-3-matrix-operations.md) — `2026-08-05`
+- [특수 행렬과 행렬 연산 성질](Math/1-4-special-matrices.md) — `2026-08-05`
+
+### 2장: 선형 변환과 연립방정식
+
+- [선형 변환의 기하학적 해석](Math/2-1-linear-transformation.md) — `2026-08-05`
+- [벡터공간과 선형 독립](Math/2-2-vector-space-linear-independence.md) — `2026-08-06`
+- [연립선형방정식과 행렬 해법](Math/2-3-linear-equations.md) — `2026-08-06`
+
+### 3장: 고유값·고유벡터와 직교성
+
+- [고유값·고유벡터의 정의와 기하학적 의미](Math/3-1-eigenvalues-eigenvectors.md) — `2026-08-06`
+- [행렬 대각화와 PCA 구현](Math/3-2-diagonalization-pca.md) — `2026-08-06`
+- [직교성과 최소제곱법](Math/3-3-orthogonality-least-squares.md) — `2026-08-06`
+
+### 4장: 특이값 분해(SVD)와 행렬 분해 응용
+
+- 특이값 분해(SVD)의 구조와 원리 — 학습 내용 추가 예정
+- SVD와 PCA의 연결 및 저랭크 응용 — 학습 내용 추가 예정
+- 선형대수 종합 미니 프로젝트 — 학습 내용 추가 예정
+
+### 5장: 행렬과 텐서의 Shape
+
+- 벡터·행렬·텐서와 딥러닝 Shape 표기 — 학습 내용 추가 예정
+- `reshape`·`transpose`·`broadcasting`과 행렬곱 Shape 추론 — 학습 내용 추가 예정
+
+### 6장: Attention 수식과 Softmax 기초
+
+- Attention Score: 내적과 QKᵀ Shape 추론 — 학습 내용 추가 예정
+- Softmax 로그확률과 Cross Entropy — 학습 내용 추가 예정
+
+### 7장: 미분·그래디언트·체인룰과 학습
+
+- 미분·편미분·Gradient와 Gradient Descent — 학습 내용 추가 예정
+- Chain Rule과 Backpropagation 직관 — 학습 내용 추가 예정
