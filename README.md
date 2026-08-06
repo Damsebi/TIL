@@ -10,7 +10,11 @@
 
 ## Python
 
-- [Python: 변수](Python/1-Variable.md) — `2026-08-04`
+- [변수](Python/1-Variable.md) — `2026-08-04`
+- [입출력](Python/2-Input-Output.md) — `2026-08-04`
+- [문자열](Python/3-String.md) — `2026-08-04`
+- [조건문](Python/4-Conditional.md) — `2026-08-04`
+
 
 ## 기초 수학
 
