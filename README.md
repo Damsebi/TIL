@@ -4,37 +4,37 @@
 
 ## Git
 
-- [Git이란 무엇인가](Git/what-is-git.md) — `2026-08-03`
-- [Git 기본 명령어](Git/commands.md) — `2026-08-03`
-- [커밋 메시지 작성 가이드](Git/commit-guide.md) — `2026-08-03`
+- [Git이란 무엇인가](Git/what-is-git.md)
+- [Git 기본 명령어](Git/commands.md)
+- [커밋 메시지 작성 가이드](Git/commit-guide.md)
 
 ## Python
 
-- [변수](Python/1-Variable.md) — `2026-08-04`
-- [입출력](Python/2-Input-Output.md) — `2026-08-04`
-- [문자열](Python/3-String.md) — `2026-08-04`
-- [조건문](Python/4-Conditional.md) — `2026-08-04`
+- [변수](Python/1-Variable.md)
+- [입출력](Python/2-Input-Output.md)
+- [문자열](Python/3-String.md)
+- [조건문](Python/4-Conditional.md)
 
 ## 기초 수학
 
 ### 1장: 벡터와 행렬 연산
 
-- [벡터의 수학적 정의와 기하학적 해석](Math/1-1-vector-definition.md) — `2026-08-05`
-- [내적과 코사인 유사도](Math/1-2-dot-product-cosine-similarity.md) — `2026-08-05`
-- [행렬 연산과 딥러닝 레이어](Math/1-3-matrix-operations.md) — `2026-08-05`
-- [특수 행렬과 행렬 연산 성질](Math/1-4-special-matrices.md) — `2026-08-05`
+- [벡터의 수학적 정의와 기하학적 해석](Math/1-1-vector-definition.md)
+- [내적과 코사인 유사도](Math/1-2-dot-product-cosine-similarity.md)
+- [행렬 연산과 딥러닝 레이어](Math/1-3-matrix-operations.md)
+- [특수 행렬과 행렬 연산 성질](Math/1-4-special-matrices.md)
 
 ### 2장: 선형 변환과 연립방정식
 
-- [선형 변환의 기하학적 해석](Math/2-1-linear-transformation.md) — `2026-08-05`
-- [벡터공간과 선형 독립](Math/2-2-vector-space-linear-independence.md) — `2026-08-06`
-- [연립선형방정식과 행렬 해법](Math/2-3-linear-equations.md) — `2026-08-06`
+- [선형 변환의 기하학적 해석](Math/2-1-linear-transformation.md)
+- [벡터공간과 선형 독립](Math/2-2-vector-space-linear-independence.md)
+- [연립선형방정식과 행렬 해법](Math/2-3-linear-equations.md)
 
 ### 3장: 고유값·고유벡터와 직교성
 
-- [고유값·고유벡터의 정의와 기하학적 의미](Math/3-1-eigenvalues-eigenvectors.md) — `2026-08-06`
-- [행렬 대각화와 PCA 구현](Math/3-2-diagonalization-pca.md) — `2026-08-06`
-- [직교성과 최소제곱법](Math/3-3-orthogonality-least-squares.md) — `2026-08-06`
+- [고유값·고유벡터의 정의와 기하학적 의미](Math/3-1-eigenvalues-eigenvectors.md)
+- [행렬 대각화와 PCA 구현](Math/3-2-diagonalization-pca.md)
+- [직교성과 최소제곱법](Math/3-3-orthogonality-least-squares.md)
 
 ### 4장: 특이값 분해(SVD)와 행렬 분해 응용
 
