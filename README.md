@@ -10,7 +10,7 @@
 
 ## Python
 
-- [Python 기초 문법](Python/basic-syntax.md) — `2026-08-04`
+- [Python: 변수](Python/1-Variable.md) — `2026-08-04`
 
 ## 기초 수학
 
