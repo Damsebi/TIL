@@ -2,6 +2,10 @@
 
 학습한 내용을 주제별로 정리합니다.
 
+## 암기해야할 개념
+
+- [기초 수학](Memorization/Basic-Math.md)
+
 ## Git
 
 - [Git이란 무엇인가](Git/what-is-git.md)
