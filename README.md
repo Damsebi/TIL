@@ -30,15 +30,15 @@
 
 ### 2장: 선형 변환과 연립방정식
 
-- [선형 변환의 기하학적 해석](Math/2-1-linear-transformation.md)
-- [벡터공간과 선형 독립](Math/2-2-vector-space-linear-independence.md)
-- [연립선형방정식과 행렬 해법](Math/2-3-linear-equations.md)
+- [선형 변환의 기하학적 해석](Math/2-1-linear-transformation.md) — 학습 내용 추가 예정
+- [벡터공간과 선형 독립](Math/2-2-vector-space-linear-independence.md) — 학습 내용 추가 예정
+- [연립선형방정식과 행렬 해법](Math/2-3-linear-equations.md) — 학습 내용 추가 예정
 
 ### 3장: 고유값·고유벡터와 직교성
 
-- [고유값·고유벡터의 정의와 기하학적 의미](Math/3-1-eigenvalues-eigenvectors.md)
-- [행렬 대각화와 PCA 구현](Math/3-2-diagonalization-pca.md)
-- [직교성과 최소제곱법](Math/3-3-orthogonality-least-squares.md)
+- [고유값·고유벡터의 정의와 기하학적 의미](Math/3-1-eigenvalues-eigenvectors.md) — 학습 내용 추가 예정
+- [행렬 대각화와 PCA 구현](Math/3-2-diagonalization-pca.md) — 학습 내용 추가 예정 
+- [직교성과 최소제곱법](Math/3-3-orthogonality-least-squares.md) — 학습 내용 추가 예정
 
 ### 4장: 특이값 분해(SVD)와 행렬 분해 응용
 
