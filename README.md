@@ -10,7 +10,7 @@
 
 ## 기초 수학
 
-- [벡터에서 코사인 유사도까지](Math/1.vectors-to-cosine-similarity.md)
+- [벡터에서 코사인 유사도까지](Math/1-vectors-to-cosine-similarity.md)
 - [벡터의 수학적 정의와 기하학적 해석](Math/1-1-vector-definition.md)
 - [내적과 코사인 유사도](Math/1-2-dot-product-cosine-similarity.md)
 - [행렬 연산과 딥러닝 레이어](Math/1-3-matrix-operations.md)
