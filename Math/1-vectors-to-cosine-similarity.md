@@ -46,10 +46,10 @@ $$
 
 ### 코사인 유사도
 
-내적에서 두 벡터의 크기 영향을 제거하고 방향만 비교한다.
+내적에서 두 벡터의 크기 영향을 제거하고 방향만 비교한다. 코사인 유사도를 $S_{\cos}$라고 표시하면 다음과 같다.
 
 $$
-\operatorname{cosine\_similarity}(\mathbf{a},\mathbf{b}) =
+S_{\cos}(\mathbf{a},\mathbf{b}) =
 \frac{\mathbf{a}\cdot\mathbf{b}}
 {\|\mathbf{a}\|_2\|\mathbf{b}\|_2}
 $$
@@ -62,7 +62,7 @@ $$
 
 $$
 \hat{\mathbf{a}}\cdot\hat{\mathbf{b}} =
-\operatorname{cosine\_similarity}(\mathbf{a},\mathbf{b})
+S_{\cos}(\mathbf{a},\mathbf{b})
 $$
 
 ---
