@@ -1,27 +1,18 @@
 # Today I Learned
 
-학습한 내용을 주제별로 정리합니다.
-
-## 암기해야할 개념
-
-- [기초 수학](Memorization/Basic-Math.md)
+공부하면서 헷갈렸거나, 나중에 다시 찾아볼 내용을 정리합니다.
 
 ## Git
 
-- [Git이란 무엇인가](Git/what-is-git.md)
 - [Git 기본 명령어](Git/commands.md)
 - [커밋 메시지 작성 가이드](Git/commit-guide.md)
 
-## Python
-
-- [변수](Python/1-Variable.md)
-- [입출력](Python/2-Input-Output.md)
-- [문자열](Python/3-String.md)
-- [조건문](Python/4-Conditional.md)
 
 ## 기초 수학
 
 ### 1장: 벡터와 행렬 연산
+
+- [벡터에서 코사인 유사도까지](Math/vectors-to-cosine-similarity.md)
 
 - [벡터의 수학적 정의와 기하학적 해석](Math/1-1-vector-definition.md)
 - [내적과 코사인 유사도](Math/1-2-dot-product-cosine-similarity.md)
