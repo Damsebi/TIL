@@ -11,3 +11,4 @@
 ## 기초 수학
 
 - [벡터에서 코사인 유사도까지](Math/1-vectors-to-cosine-similarity.md)
+- [행렬 연산과 딥러닝 레이어](Math/행렬연산과 딥러닝레이어.md)
