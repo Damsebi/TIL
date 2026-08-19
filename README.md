@@ -37,6 +37,7 @@
 - [딥러닝 문제 유형과 입출력 구조 설계](DeepLearningBasic/1-3-딥러닝-문제-유형과-입출력-구조-설계.md)
 - [기본 코드 구조 읽기](DeepLearningBasic/1-4-기본-코드-구조-읽기.md)
 - [Tensor 생성과 dtype·shape 확인](DeepLearningBasic/2-1-tensor-생성과-dtype-shape-확인.md)
+- [Batch Dimension과 Broadcasting](DeepLearningBasic/2-2-batch-dimension과-broadcasting.md)
 
 
 ## 딥러닝 심화
