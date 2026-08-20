@@ -16,39 +16,10 @@
 
 ## `nn.Linear(in_features, out_features)`의 의미
 
-`nn.Linear(5, 3)`은 Sample 하나가 가진 입력 Feature 5개를 출력 Feature 3개로 바꾸는 Layer다.
-
-입력이 다음 Shape를 가진다고 하자.
-
-```python
-x = torch.randn(2, 5)
-```
+앞 강의에서 `nn.Linear(5, 3)`이 입력 Feature 5개를 출력 Feature 3개로 바꾸고 Batch Size는 유지한다는 점을 확인했다. 이번 강의에서는 이 Shape 변환을 반복하기보다 Linear 객체 내부의 Weight와 Bias가 어떻게 만들어지고 계산에 사용되는지에 집중했다.
 
 ```text
-x.shape = (2, 5)
-
-2 = Batch Size
-5 = 입력 Feature 수
-```
-
-다음 Linear를 연결할 수 있다.
-
-```python
-linear = nn.Linear(5, 3)
-```
-
-출력 Shape는 `(2, 3)`이 된다.
-
-```text
-(2, 5)
-→ Linear(5, 3)
-→ (2, 3)
-
-Batch Size 2
-→ 유지
-
-Feature 수
-→ 5에서 3으로 변경
+(2, 5) → Linear(5, 3) → (2, 3)
 ```
 
 ---
@@ -327,49 +298,7 @@ $$
 
 ---
 
-## 왜 `W`가 `linear.weight`일까?
-
-`nn.Linear(5, 3)`을 생성하면 PyTorch가 해당 Layer에서 사용할 학습 Parameter를 객체 내부에 만든다.
-
-```python
-linear = nn.Linear(5, 3)
-
-print(linear.weight)
-print(linear.bias)
-```
-
-수학에서 `W`와 `b`로 표현한 값을 PyTorch가 각각 `weight`와 `bias`라는 이름으로 관리한다.
-
-출력 Feature가 3개이고 입력 Feature가 5개이므로 출력마다 입력 5개에 대한 Weight가 필요하다.
-
-```text
-출력 1
-← Weight 5개
-
-출력 2
-← Weight 5개
-
-출력 3
-← Weight 5개
-```
-
-전체 Weight는 15개이고 Shape는 `(3, 5)`다.
-
-```text
-x.shape               = (2, 5)
-linear.weight.shape   = (3, 5)
-linear.weight.T.shape = (5, 3)
-linear.bias.shape     = (3,)
-```
-
-직접 계산할 때는 다음 Shape가 연결된다.
-
-```text
-(2, 5) @ (5, 3) + (3,)
-→ (2, 3)
-```
-
-PyTorch가 Weight를 `(out_features, in_features)` 형태로 저장하므로 직접 행렬곱할 때 `.T`를 사용한다.
+수학식의 `W`와 `b`는 별도의 추상적인 값이 아니라 PyTorch가 Linear 객체에 등록한 `linear.weight`와 `linear.bias`다. 위에서 확인한 Shape 때문에 직접 행렬곱할 때는 `linear.weight.T`를 사용한다.
 
 ---
 

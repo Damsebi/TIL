@@ -146,7 +146,7 @@ Weight와 Bias
 
 ## `SimpleMLP` 구현
 
-이번에 구현한 전체 Model은 다음과 같다.
+앞 강의에서 학습한 Flatten과 MLP 구조를 `nn.Module` Class 안에 조합했다.
 
 ```python
 import torch
@@ -171,50 +171,11 @@ class SimpleMLP(nn.Module):
         return logits
 ```
 
-기본 구조는 다음과 같다.
-
-```text
-784 → 128 → 10
-
-784
-→ 입력 Feature 수
-
-128
-→ hidden_dim, 은닉층 Feature 수
-
-10
-→ num_classes, 최종 Class 수
-```
-
-첫 번째 Linear는 Feature를 784개에서 128개로 바꾼다.
-
-```python
-self.fc1 = nn.Linear(784, 128)
-```
-
-ReLU는 이번 강의에서 활성화 함수의 세부 원리보다 `fc1`과 `fc2` 사이에서 값을 변환하되 Shape는 유지한다는 수준으로 이해했다.
-
-```python
-self.relu = nn.ReLU()
-```
-
-마지막 Linear는 Feature 128개를 Class별 출력값 10개로 바꾼다.
-
-```python
-self.fc2 = nn.Linear(128, 10)
-```
-
----
-
-## Tensor Shape 흐름
-
-이미지 8장을 더미 입력으로 만들었다.
+이번 강의에서는 각 Layer의 개념을 다시 설명하기보다 전체 Forward가 예상한 Shape로 연결되는지 확인했다.
 
 ```python
 images = torch.randn(8, 1, 28, 28)
 ```
-
-전체 Shape 흐름은 다음과 같다.
 
 ```text
 (8, 1, 28, 28)
@@ -228,30 +189,7 @@ images = torch.randn(8, 1, 28, 28)
 (8, 10)
 ```
 
-Batch Size 8은 유지되고 Feature 차원만 Layer에 따라 바뀐다.
-
-```text
-Flatten
-→ 1 × 28 × 28 = 784
-
-fc1
-→ 784에서 128로 변경
-
-ReLU
-→ Shape 유지
-
-fc2
-→ 128에서 10으로 변경
-```
-
-앞 단계의 마지막 Feature 차원은 다음 Linear의 입력 차원과 일치해야 한다.
-
-```text
-이전 단계의 마지막 Feature 차원
-= 다음 Linear의 in_features
-```
-
-예를 들어 `input_dim=28`로 Model을 만들면 Flatten 결과 784와 첫 번째 Linear의 입력 차원 28이 일치하지 않아 Runtime Error가 발생한다.
+Flatten 계산과 Batch 차원 유지 원리는 3-4강에서 자세히 다뤘다. 여기서는 `input_dim`이 Flatten 결과와 다르면 첫 번째 Linear에서 Runtime Error가 발생한다는 연결 조건을 실제 Model 구현에 적용했다.
 
 ---
 
@@ -333,36 +271,6 @@ fc2    : torch.Size([8, 10])
 ```
 
 학습 초기와 디버깅 단계에서는 유용하지만, 확인이 끝난 뒤에도 모든 Forward마다 불필요한 출력이 발생하지 않도록 최종 Model에서는 지나치게 많은 `print`를 제거한다.
-
----
-
-## `hidden_dim`과 `num_classes`
-
-Model 구조의 숫자를 생성자 인자로 받으면 같은 Class로 여러 크기의 Model을 만들 수 있다.
-
-```python
-model = SimpleMLP(
-    input_dim=784,
-    hidden_dim=64,
-    num_classes=5
-)
-```
-
-이 Model의 구조는 다음과 같다.
-
-```text
-784 → 64 → 5
-```
-
-`hidden_dim`은 은닉층의 Feature 수이고, `num_classes`는 최종 분류할 Class 수이자 Logit의 마지막 차원이다.
-
-```text
-784 → 32  → 5
-784 → 64  → 5
-784 → 128 → 5
-```
-
-Hidden Size가 달라도 `num_classes=5`라면 최종 출력 Shape는 모두 `(Batch Size, 5)`다.
 
 ---
 
@@ -544,6 +452,6 @@ Model의 Layer 구조는 미리 정하지만 Layer 내부의 Weight와 Bias는 �
 
 `model(x)`를 호출하면 `nn.Module`의 내부 호출 처리를 거쳐 `forward(x)`가 실행되므로 일반적으로 `model.forward(x)`를 직접 호출하지 않는다.
 
-Batch 차원은 유지되고 Feature 차원은 `Flatten → fc1 → ReLU → fc2`를 지나며 바뀐다. 앞 단계의 마지막 Feature 차원과 다음 Linear의 `in_features`가 일치해야 한다.
+`SimpleMLP`에 더미 입력을 통과시켜 Flatten 결과와 각 Linear의 입출력 차원이 올바르게 연결되는지 확인했다.
 
 분류 Model에서는 `num_classes`, 마지막 Linear의 `out_features`, `logits.shape[-1]`이 서로 같아야 한다.
