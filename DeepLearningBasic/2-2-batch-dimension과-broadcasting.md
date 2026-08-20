@@ -47,20 +47,7 @@ Broadcasting은 서로 다른 Shape를 일정한 규칙에 따라 자동으로 �
 
 ---
 
-## 이미지 데이터의 Batch Dimension
-
-PyTorch에서 이미지 Batch는 일반적으로 다음 형태로 표현한다.
-
-```text
-(N, C, H, W)
-
-N = Batch Size
-C = Channels
-H = Height
-W = Width
-```
-
-`(32, 3, 224, 224)`는 RGB 이미지 32장이 있고 각 이미지의 높이와 너비가 `224 × 224`라는 뜻이다.
+## 이미지 한 장에 Batch Dimension 추가
 
 이미지 한 장의 Shape가 `(3, 224, 224)`라면 Batch 차원을 추가해 다음처럼 만들 수 있다.
 
@@ -68,6 +55,8 @@ W = Width
 (3, 224, 224)
 → (1, 3, 224, 224)
 ```
+
+앞의 `1`은 이미지 한 장을 하나의 Batch로 묶었다는 뜻이다.
 
 ---
 

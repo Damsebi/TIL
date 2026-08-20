@@ -317,39 +317,6 @@ for name, tensor in tensors:
 
 ---
 
-## Tensor 디버깅에서 먼저 볼 것
-
-Tensor 관련 오류가 발생하면 먼저 다음 세 가지를 확인한다.
-
-```text
-shape
-→ 모델이 기대하는 입력 구조와 맞는가?
-
-dtype
-→ 모델이나 Loss가 요구하는 자료형인가?
-
-device
-→ 모델과 Tensor가 같은 CPU/GPU에 있는가?
-```
-
-예를 들어 다음과 같은 문제가 생길 수 있다.
-
-```text
-모델 입력 요구: [32, 10]
-실제 입력:      [32, 8]
-→ Shape 문제
-
-정답이 long이어야 하는데 float32
-→ dtype 문제
-
-모델은 GPU, Tensor는 CPU
-→ device 문제
-```
-
-`describe_tensor()`를 만든 이유도 이 정보를 빠르게 확인하기 위해서다.
-
----
-
 ## 연습문제: 학생 5명과 점수 3개
 
 ### `torch.tensor([5, 3])`은 `[5, 3]` Shape일까?
