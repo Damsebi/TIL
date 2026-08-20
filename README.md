@@ -38,6 +38,7 @@
 - [기본 코드 구조 읽기](DeepLearningBasic/1-4-기본-코드-구조-읽기.md)
 - [Tensor 생성과 dtype·shape 확인](DeepLearningBasic/2-1-tensor-생성과-dtype-shape-확인.md)
 - [Batch Dimension과 Broadcasting](DeepLearningBasic/2-2-batch-dimension과-broadcasting.md)
+- [CPU·GPU Device와 `.to(device)`](DeepLearningBasic/2-4-cpu-gpu-device와-to-device.md)
 
 
 ## 딥러닝 심화
