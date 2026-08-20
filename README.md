@@ -41,6 +41,7 @@
 - [CPU·GPU Device와 `.to(device)`](DeepLearningBasic/2-3-cpu-gpu-device와-to-device.md)
 - [Shape·Device 오류 디버깅](DeepLearningBasic/2-4-shape-device-오류-디버깅.md)
 - [퍼셉트론과 선형 결정 경계](DeepLearningBasic/3-1-퍼셉트론과-선형-결정-경계.md)
+- [MLP의 입력층·은닉층·출력층](DeepLearningBasic/3-2-mlp-입력층-은닉층-출력층.md)
 
 
 ## 딥러닝 심화
