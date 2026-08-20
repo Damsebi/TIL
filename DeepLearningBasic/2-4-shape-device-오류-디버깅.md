@@ -14,7 +14,7 @@ Device 오류에서는 CUDA를 사용할 수 있는지보다 같은 연산에 �
 
 ---
 
-## PyTorch 오류 디버깅의 기본 흐름
+## 오류별 디버깅 체크리스트
 
 PyTorch 오류는 먼저 다음 세 종류를 확인한다.
 
@@ -29,15 +29,21 @@ Device
 → CPU와 GPU 위치 문제
 ```
 
-기본적인 확인 흐름은 다음과 같다.
+오류 종류에 따라 실제 정보와 기대 정보를 비교한다.
 
 ```text
-오류 발생
-→ Shape / dtype / Device 중 무엇인지 분류
-→ 오류가 난 연산에 참여하는 Tensor 확인
-→ 실제 Tensor 정보와 모델이 기대하는 정보 비교
-→ 필요한 부분 수정
-→ 다시 확인
+Shape 오류
+→ 실제 Tensor Shape
+→ 모델과 연산이 기대하는 Shape
+
+dtype 오류
+→ 실제 Tensor dtype
+→ 모델이나 Loss가 요구하는 dtype
+
+Device 오류
+→ 모델 파라미터 Device
+→ 입력 Tensor Device
+→ Target Tensor Device
 ```
 
 Tensor를 디버깅할 때 자주 확인하는 값은 다음과 같다.
@@ -46,6 +52,16 @@ Tensor를 디버깅할 때 자주 확인하는 값은 다음과 같다.
 print(x.shape)
 print(x.dtype)
 print(x.device)
+```
+
+수정 도구부터 고르지 않고 다음 순서로 확인한다.
+
+```text
+오류 종류 분류
+→ 오류가 난 연산에 참여하는 대상 확인
+→ 실제 정보와 기대 정보 비교
+→ 원인에 맞는 부분만 수정
+→ 다시 실행해 검증
 ```
 
 ---
@@ -81,7 +97,7 @@ x.shape[-1] == model.in_features
 
 ---
 
-## 단일 Sample에 Batch 차원 추가
+## Shape 오류 실습: 단일 Sample과 Batch 차원
 
 Feature가 5개인 단일 Sample을 다음처럼 만들었다.
 
@@ -103,31 +119,11 @@ Shape는 다음처럼 바뀐다.
 
 `(5,)`는 Feature 5개를 가진 단일 Sample이고, `(1, 5)`는 Sample 1개와 Feature 5개를 가진 Batch 형태다.
 
-이번 실습에서 `single_sample.unsqueeze(0)`은 올바르게 사용했다.
-
----
-
-## `squeeze`와 `unsqueeze`는 모든 Shape 오류의 해결책일까?
-
 처음에는 두 Tensor의 Shape가 다르면 `squeeze`나 `unsqueeze`로 Shape를 맞출 수 있다고 생각했다.
 
-하지만 두 연산은 아무 Shape Mismatch나 해결하는 도구가 아니다.
+하지만 두 연산은 모든 Shape Mismatch를 해결하는 도구가 아니다. 이번에는 모델에 넣을 Batch 차원이 실제로 하나 필요했기 때문에 `unsqueeze(0)`이 올바른 수정이었다.
 
-```text
-unsqueeze
-→ 크기 1인 새 차원을 필요한 위치에 추가
-
-squeeze
-→ 크기 1인 차원을 필요할 때 제거
-```
-
-이번 예제에서는 단일 Sample에 Batch 차원이 하나 필요했기 때문에 다음 연산이 적절했다.
-
-```python
-single_sample = single_sample.unsqueeze(0)
-```
-
-Shape가 다르다는 이유만으로 무작정 차원을 추가하거나 제거하지 않고, 모델과 연산이 어떤 Shape를 요구하는지 먼저 확인해야 한다.
+Shape가 다르다는 이유만으로 차원을 추가하거나 제거하지 않고 모델과 연산이 어떤 Shape를 요구하는지 먼저 확인한다.
 
 ---
 
@@ -216,60 +212,6 @@ print(target.device)
 
 ---
 
-## 모델 Output의 Device
-
-### Output도 직접 `.to(device)`로 옮겨야 할까?
-
-처음에는 모델의 결과인 Output까지 직접 Device를 맞춰야 하는지 궁금했다.
-
-보통 Output의 Device는 따로 옮길 필요가 없다.
-
-```python
-model = model.to("cuda")
-x = x.to("cuda")
-
-output = model(x)
-```
-
-모델과 입력이 CUDA에서 연산되었다면 결과인 `output`도 같은 Device에서 생성된다.
-
-따라서 다음 코드로 Output을 다시 옮기는 것이 핵심은 아니다.
-
-```python
-output = output.to(device)
-```
-
-대신 Output과 이후 연산에 함께 참여하는 Target 등의 Device를 확인해야 한다.
-
-```text
-output.device = cuda
-target.device = cpu
-→ Loss 계산에서 Device Mismatch가 발생할 수 있음
-```
-
----
-
-## 오류별로 무엇을 비교할까?
-
-```text
-Shape 오류
-→ 실제 Tensor Shape
-→ 모델과 연산이 기대하는 Shape
-
-dtype 오류
-→ 실제 Tensor dtype
-→ 모델이나 Loss가 요구하는 dtype
-
-Device 오류
-→ 모델 파라미터 Device
-→ 입력 Tensor Device
-→ Target Tensor Device
-```
-
-수정 도구부터 고르기보다 실제 정보와 기대 정보를 먼저 비교한다.
-
----
-
 ## 다시 볼 때 핵심
 
 PyTorch 오류가 발생하면 Shape, dtype, Device부터 확인한다.
@@ -278,8 +220,8 @@ PyTorch 오류가 발생하면 Shape, dtype, Device부터 확인한다.
 
 `(5,)`인 단일 Sample에 Batch 차원이 필요하다면 `unsqueeze(0)`으로 `(1, 5)`를 만든다.
 
-`squeeze`와 `unsqueeze`는 모든 Shape Mismatch를 해결하는 도구가 아니라 크기 1인 차원을 실제로 추가하거나 제거해야 할 때 사용한다.
+`squeeze`와 `unsqueeze`는 모든 Shape Mismatch의 해결책이 아니다. 모델이 요구하는 Shape를 먼저 확인한다.
 
 `torch.cuda.is_available()`은 CUDA 사용 가능 여부를 확인한다. Device Mismatch의 원인은 같은 연산에 참여하는 모델과 Tensor의 실제 Device를 비교해 찾는다.
 
-모델과 입력이 같은 Device에서 연산되면 Output도 같은 Device에서 생성된다. 이후 Loss 계산에 참여하는 Target의 Device를 추가로 확인해야 한다.
+해결 방법을 바로 적용하기보다 무엇이 다른지 검사하고 원인에 맞는 수정만 한다.

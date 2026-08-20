@@ -114,6 +114,35 @@ device = torch.device(
 )
 ```
 
+### 모델 Output도 직접 이동해야 할까?
+
+처음에는 모델의 결과인 Output까지 직접 `.to(device)`로 옮겨야 하는지 궁금했다.
+
+보통 Output은 따로 이동할 필요가 없다.
+
+```python
+model = model.to(device)
+x = x.to(device)
+
+output = model(x)
+```
+
+모델과 입력이 같은 Device에서 연산되면 Output도 그 Device에서 생성된다.
+
+따라서 다음처럼 Output을 다시 옮기는 것이 핵심은 아니다.
+
+```python
+output = output.to(device)
+```
+
+대신 Loss 계산처럼 Output과 함께 연산하는 Target이 같은 Device에 있는지를 확인해야 한다.
+
+```text
+output.device = cuda
+target.device = cpu
+→ Loss 계산에서 Device Mismatch가 발생할 수 있음
+```
+
 ---
 
 ## 필수 문제 1: Device 확인과 Tensor 이동
@@ -245,5 +274,7 @@ GPU 런타임을 켜는 것과 Tensor가 실제로 GPU에 있는 것은 서로 �
 모델, 입력 Tensor, Label Tensor처럼 같은 연산에 참여하는 대상은 같은 Device에 있어야 한다.
 
 Tensor의 `.to(device)`는 이동된 Tensor를 반환하므로 반환값을 변수에 저장한다.
+
+모델과 입력이 같은 Device에서 연산되면 Output도 같은 Device에서 생성된다. Loss 계산에 참여하는 Target의 Device를 추가로 확인한다.
 
 Batch Helper 함수에서는 전달받은 `batch`를 먼저 `x, y = batch`로 분리한 뒤 두 Tensor를 각각 이동한다.
