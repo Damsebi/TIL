@@ -44,6 +44,7 @@
 - [MLP의 입력층·은닉층·출력층](DeepLearningBasic/3-2-mlp-입력층-은닉층-출력층.md)
 - [가중치·편향과 `nn.Linear`](DeepLearningBasic/3-3-가중치-편향과-nn-linear.md)
 - [입출력 차원 계산과 Flatten](DeepLearningBasic/3-4-입출력-차원-계산과-flatten.md)
+- [MLP Forward 미니 구현](DeepLearningBasic/3-5-mlp-forward-미니-구현.md)
 
 
 ## 딥러닝 심화
