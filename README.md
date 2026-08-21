@@ -45,6 +45,7 @@
 - [가중치·편향과 `nn.Linear`](DeepLearningBasic/3-3-가중치-편향과-nn-linear.md)
 - [입출력 차원 계산과 Flatten](DeepLearningBasic/3-4-입출력-차원-계산과-flatten.md)
 - [MLP Forward 미니 구현](DeepLearningBasic/3-5-mlp-forward-미니-구현.md)
+- [비선형성과 활성화 함수의 필요성](DeepLearningBasic/4-1-비선형성과-활성화-함수-필요성.md)
 
 
 ## 딥러닝 심화
