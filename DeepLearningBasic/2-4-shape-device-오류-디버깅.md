@@ -2,15 +2,7 @@
 
 > 학습일: 2026-08-20
 
-## 1. 오늘 학습 키워드
-
-- `shape`·`dtype`·`device` 확인
-- `nn.Linear`의 `in_features`
-- 단일 Sample과 Batch Dimension
-- `squeeze()`·`unsqueeze()`의 사용 조건
-- Device Mismatch
-
-## 2. 오늘 학습한 내용을 나만의 언어로 정리하기
+## 1. 오늘 학습한 내용을 나만의 언어로 정리하기
 
 ### 오류를 먼저 분류하기
 
@@ -46,7 +38,7 @@ Device 오류에서는 같은 연산에 참여하는 Model, 입력 Tensor, Targe
 
 `torch.cuda.is_available()`은 CUDA를 사용할 수 있는 환경인지 확인하는 함수다. 실제 Device Mismatch의 직접적인 원인은 CUDA 사용 가능 여부가 아니라 연산에 참여하는 객체들의 Device가 서로 다른 것이다.
 
-## 3. 학습하며 겪었던 문제점과 해결 과정
+## 2. 학습하며 겪었던 문제점과 해결 과정
 
 ### 질문: 디버깅 Checklist에는 무엇을 추가해야 하는가?
 

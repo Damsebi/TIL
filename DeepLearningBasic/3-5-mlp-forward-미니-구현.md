@@ -2,15 +2,7 @@
 
 > 학습일: 2026-08-20
 
-## 1. 오늘 학습 키워드
-
-- `nn.Module` 상속
-- `__init__`과 `forward`
-- Layer 구조와 학습 Parameter
-- MLP의 Shape 흐름
-- `input_dim`·`hidden_dim`·`output_dim`
-
-## 2. 오늘 학습한 내용을 나만의 언어로 정리하기
+## 1. 오늘 학습한 내용을 나만의 언어로 정리하기
 
 ### `nn.Module`로 Model 정의하기
 
@@ -51,7 +43,7 @@ num_classes = 분류할 Class 수
 
 분류 Model에서는 최종 Logits의 마지막 차원이 Class 수와 같아야 한다. Model을 만든 뒤 더미 입력으로 Forward를 실행하고 중간 Shape와 최종 Shape를 확인하면 Linear의 입력 차원 불일치 같은 오류를 미리 찾을 수 있다.
 
-## 3. 학습하며 겪었던 문제점과 해결 과정
+## 2. 학습하며 겪었던 문제점과 해결 과정
 
 ### 질문과 이해 수정: `nn.Module`은 기본으로 제공되는가?
 

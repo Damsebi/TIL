@@ -2,15 +2,7 @@
 
 > 학습일: 2026-08-20
 
-## 1. 오늘 학습 키워드
-
-- MLP 입력 Shape
-- 이미지 Tensor와 Flatten
-- Batch Dimension 유지
-- `torch.flatten(x, start_dim=1)`
-- `nn.Linear`의 `in_features`
-
-## 2. 오늘 학습한 내용을 나만의 언어로 정리하기
+## 1. 오늘 학습한 내용을 나만의 언어로 정리하기
 
 ### 이미지 Tensor를 MLP 입력으로 바꾸기
 
@@ -38,7 +30,7 @@ in_features = channels × height × width
 
 `nn.Linear`에 입력할 때는 Flatten 결과의 마지막 차원과 `in_features`가 일치해야 한다.
 
-## 3. 학습하며 겪었던 문제점과 해결 과정
+## 2. 학습하며 겪었던 문제점과 해결 과정
 
 ### 질문: 이미지 Flatten과 `in_features` 실습 풀이가 맞는가?
 

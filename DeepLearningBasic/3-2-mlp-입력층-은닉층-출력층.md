@@ -2,15 +2,7 @@
 
 > 학습일: 2026-08-20
 
-## 1. 오늘 학습 키워드
-
-- MLP의 입력층·은닉층·출력층
-- `nn.Linear(in_features, out_features)`
-- Hidden Size와 Layer 개수
-- Depth와 Width
-- Linear의 Parameter 수
-
-## 2. 오늘 학습한 내용을 나만의 언어로 정리하기
+## 1. 오늘 학습한 내용을 나만의 언어로 정리하기
 
 ### MLP의 구조와 Shape 흐름
 
@@ -57,7 +49,7 @@ parameter 수
 
 ReLU에는 학습되는 Weight와 Bias가 없으므로 학습 가능한 Parameter 수는 0개다.
 
-## 3. 학습하며 겪었던 문제점과 해결 과정
+## 2. 학습하며 겪었던 문제점과 해결 과정
 
 ### 질문: `hidden = layer1`, `logits = layer2`처럼 쓰는 것인가?
 

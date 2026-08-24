@@ -2,15 +2,7 @@
 
 > 학습일: 2026-08-20
 
-## 1. 오늘 학습 키워드
-
-- `in_features`와 `out_features`
-- Weight·Bias의 Shape
-- Linear의 Parameter 수
-- `parameters()`와 `named_parameters()`
-- `linear.weight`와 `linear.bias`
-
-## 2. 오늘 학습한 내용을 나만의 언어로 정리하기
+## 1. 오늘 학습한 내용을 나만의 언어로 정리하기
 
 ### `nn.Linear`의 Shape와 Parameter
 
@@ -53,7 +45,7 @@ y_manual = x @ linear.weight.T + linear.bias
 
 `parameters()`는 Parameter를 순회하는 Iterator를 반환하고, `named_parameters()`는 이름과 Parameter를 함께 제공한다.
 
-## 3. 학습하며 겪었던 문제점과 해결 과정
+## 2. 학습하며 겪었던 문제점과 해결 과정
 
 ### 질문: `in_features=5`, `out_features=3`는 지역변수인가?
 

@@ -2,15 +2,7 @@
 
 > 학습일: 2026-08-20
 
-## 1. 오늘 학습 키워드
-
-- CPU·GPU Device
-- `torch.cuda.is_available()`
-- Tensor와 Model의 `.to(device)`
-- Device 일치
-- Batch Unpacking과 Device 이동
-
-## 2. 오늘 학습한 내용을 나만의 언어로 정리하기
+## 1. 오늘 학습한 내용을 나만의 언어로 정리하기
 
 ### Device 선택과 이동
 
@@ -48,7 +40,7 @@ batch 전달
 → model 연산과 loss 계산
 ```
 
-## 3. 학습하며 겪었던 문제점과 해결 과정
+## 2. 학습하며 겪었던 문제점과 해결 과정
 
 ### 이해한 내용: Model과 Tensor의 Device 맞추기
 
