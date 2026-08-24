@@ -1,6 +1,6 @@
 # Reshape·Transpose·Broadcasting과 행렬곱 Shape 추론
 
-> 학습일: 2026-08-24
+> 학습일: 2026-08-07
 
 ## 1. 오늘 학습한 내용을 나만의 언어로 정리하기
 
