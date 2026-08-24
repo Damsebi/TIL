@@ -2,359 +2,135 @@
 
 > 학습일: 2026-08-20
 
-## 핵심 정리
+## 1. 오늘 학습 키워드
 
-`nn.Module`은 PyTorch가 제공하는 신경망 모델용 Base Class다. `nn.Module` 자체를 수정하는 것이 아니라 이를 상속한 Class에 필요한 Layer와 데이터 흐름을 정의해 나만의 Model을 만든다.
+- `nn.Module` 상속
+- `__init__`과 `forward`
+- Layer 구조와 학습 Parameter
+- MLP의 Shape 흐름
+- `input_dim`·`hidden_dim`·`output_dim`
 
-`__init__`에서는 Model이 사용할 Layer를 만들고, `forward`에서는 입력이 그 Layer들을 어떤 순서로 통과할지 정의한다. Layer의 구조는 미리 정하지만 그 안의 Weight와 Bias는 학습하면서 계속 바뀐다.
+## 2. 오늘 학습한 내용을 나만의 언어로 정리하기
 
-`nn.Module`을 상속한 Model은 `model.forward(x)`를 직접 호출하기보다 `model(x)`로 호출한다. 그러면 PyTorch의 Module 호출 과정을 거쳐 `forward(x)`가 실행된다.
+### `nn.Module`로 Model 정의하기
 
-> 결국 Model을 구현할 때는 `__init__`에서 Layer를 준비하고, `forward`에서는 이미 준비된 Layer에 Tensor를 차례로 통과시킨 뒤 결과를 반환한다.
-
----
-
-## `nn.Module`의 의미
-
-### `nn.Module`은 PyTorch에서 기본으로 제공할까?
-
-처음에는 `nn.Module`을 가져와 원하는 형태로 튜닝한다고 이해했다. 하지만 이 표현은 `nn.Module` 자체를 직접 수정하는 것처럼 받아들일 수 있었다.
-
-`nn.Module`은 PyTorch가 기본으로 제공하는 신경망 Model용 Base Class다. 직접 수정하는 것이 아니라 상속하여 새로운 Model Class를 정의한다.
-
-```python
-import torch.nn as nn
-
-
-class SimpleMLP(nn.Module):
-    ...
-```
-
-Unity에서 `MonoBehaviour`를 상속하여 `Player`나 `Enemy` 같은 Class를 만드는 것과 비슷하게 이해했다.
-
-```text
-nn.Module
-→ 신경망 Model의 공통 기반 기능 제공
-
-SimpleMLP(nn.Module)
-→ 필요한 구조와 동작을 추가한 나만의 Model
-```
-
-`nn.Module`을 상속하면 다음과 같은 기능을 사용할 수 있다.
-
-- Model 내부에 등록된 Parameter 관리
-- `.to(device)`를 통한 Device 이동
-- `train()`과 `eval()`을 통한 학습·평가 Mode 전환
-- `model(x)` 호출을 통한 `forward(x)` 실행
-
----
-
-## `nn.Sequential`과 직접 만든 Module
-
-`nn.Sequential`은 Layer를 등록된 순서대로 통과시키는 단순한 구조에 편리하다.
-
-```python
-model = nn.Sequential(
-    nn.Flatten(),
-    nn.Linear(784, 128),
-    nn.ReLU(),
-    nn.Linear(128, 10)
-)
-```
-
-직접 `nn.Module`을 상속한 Class를 만들면 `forward`에서 데이터 흐름을 직접 정의할 수 있다.
-
-```python
-class SimpleMLP(nn.Module):
-    ...
-```
-
-```text
-nn.Sequential
-→ 등록한 Layer를 정해진 순서대로 실행
-
-nn.Module 상속 Class
-→ Model 구조와 Forward 흐름을 직접 정의
-```
-
-이번 실습처럼 순서가 단순한 MLP는 두 방식으로 모두 만들 수 있다. 직접 Class를 작성하는 방식은 이후 조건문, 여러 입력, Skip Connection처럼 더 복잡한 흐름을 표현할 때 확장하기 좋다.
-
----
-
-## `__init__`과 `forward`의 역할
-
-`__init__`은 Model에서 사용할 부품인 Layer를 준비하는 곳이다.
-
-```python
-def __init__(self):
-    super().__init__()
-
-    self.flatten = nn.Flatten()
-    self.fc1 = nn.Linear(784, 128)
-    self.relu = nn.ReLU()
-    self.fc2 = nn.Linear(128, 10)
-```
-
-`super().__init__()`은 부모 Class인 `nn.Module`의 초기화 과정을 실행한다. 그다음 Layer를 `self.fc1`과 같은 속성으로 저장하면 Module과 Parameter가 Model 내부에 등록되어 PyTorch가 관리할 수 있다.
-
-`forward`는 준비한 Layer를 어떤 순서로 사용할지 정의하는 곳이다.
-
-```python
-def forward(self, x):
-    x = self.flatten(x)
-    x = self.fc1(x)
-    x = self.relu(x)
-    x = self.fc2(x)
-
-    return x
-```
+`nn.Module`은 PyTorch가 제공하는 Model용 Base Class다. 이를 상속한 새로운 Class에 필요한 Layer와 데이터 흐름을 정의해 원하는 Model을 만든다.
 
 ```text
 __init__
-→ 사용할 Layer 준비 및 등록
+→ Linear, ReLU 등 사용할 layer 준비
 
 forward
-→ 입력이 Layer를 통과하는 순서 정의
+→ 입력 Tensor가 layer를 통과하는 순서 정의
 ```
 
----
+Layer의 종류와 입출력 구조는 `__init__`에서 미리 정하지만, Linear 내부의 Weight와 Bias는 학습하면서 변경된다. `forward`에서는 매번 새 Layer를 만들지 않고 `__init__`에서 준비한 Layer를 재사용한다.
 
-## Layer를 미리 만드는 이유
+### MLP의 Shape 흐름과 차원 검증
 
-처음에는 Layer를 `__init__`에서 만드는 것을 Layer를 정적으로 만든다고 이해했다. 하지만 이 표현은 Layer 내부의 값도 고정되어 변하지 않는다는 의미로 오해할 수 있었다.
-
-일반적으로 Model의 Layer 구조는 `__init__`에서 한 번 정의한다.
-
-```text
-Model 구조
-784 → 128 → 10
-→ 미리 정의
-```
-
-`forward`가 실행될 때마다 새로운 `nn.Linear`를 만드는 것이 아니라, `__init__`에서 만든 같은 Layer를 반복해서 사용한다.
-
-하지만 Layer 내부의 학습 가능한 값은 고정된 것이 아니다.
-
-```text
-Weight와 Bias
-→ 학습 과정에서 계속 변화
-```
-
-따라서 미리 정하는 것은 주로 Layer의 연결 구조와 입출력 차원이며, 학습을 통해 바꾸는 것은 등록된 Parameter 값이다.
-
----
-
-## `SimpleMLP` 구현
-
-앞 강의에서 학습한 Flatten과 MLP 구조를 `nn.Module` Class 안에 조합했다.
-
-```python
-import torch
-import torch.nn as nn
-
-
-class SimpleMLP(nn.Module):
-    def __init__(self, input_dim=784, hidden_dim=128, num_classes=10):
-        super().__init__()
-
-        self.flatten = nn.Flatten()
-        self.fc1 = nn.Linear(input_dim, hidden_dim)
-        self.relu = nn.ReLU()
-        self.fc2 = nn.Linear(hidden_dim, num_classes)
-
-    def forward(self, x):
-        x = self.flatten(x)
-        x = self.fc1(x)
-        x = self.relu(x)
-        logits = self.fc2(x)
-
-        return logits
-```
-
-이번 강의에서는 각 Layer의 개념을 다시 설명하기보다 전체 Forward가 예상한 Shape로 연결되는지 확인했다.
-
-```python
-images = torch.randn(8, 1, 28, 28)
-```
+MLP에서는 Batch Dimension을 유지하면서 Feature 차원이 Layer 구조에 맞게 바뀐다.
 
 ```text
 (8, 1, 28, 28)
-        ↓ Flatten
+→ Flatten
 (8, 784)
-        ↓ Linear(784, 128)
+→ Linear(784, 128)
 (8, 128)
-        ↓ ReLU
+→ ReLU
 (8, 128)
-        ↓ Linear(128, 10)
+→ Linear(128, 10)
 (8, 10)
 ```
 
-Flatten 계산과 Batch 차원 유지 원리는 3-4강에서 자세히 다뤘다. 여기서는 `input_dim`이 Flatten 결과와 다르면 첫 번째 Linear에서 Runtime Error가 발생한다는 연결 조건을 실제 Model 구현에 적용했다.
-
----
-
-## Logit의 의미
-
-`logits`는 각 Class에 대한 Model의 최종 출력 점수다.
-
 ```text
-[-1.2, 0.5, 2.1, -0.3, 0.8, 4.7, 1.0, -2.0, 0.2, 0.4]
+input_dim   = 첫 Linear가 받는 Feature 수
+hidden_dim  = 중간 Feature 수
+output_dim  = 최종 출력 Feature 수
+num_classes = 분류할 Class 수
 ```
 
-Class가 10개이면 Sample 하나마다 10개의 Logit이 나온다.
+분류 Model에서는 최종 Logits의 마지막 차원이 Class 수와 같아야 한다. Model을 만든 뒤 더미 입력으로 Forward를 실행하고 중간 Shape와 최종 Shape를 확인하면 Linear의 입력 차원 불일치 같은 오류를 미리 찾을 수 있다.
 
-```text
-logits.shape = (Batch Size, Class 수)
-```
+## 3. 학습하며 겪었던 문제점과 해결 과정
 
-이번 복습에서는 Logit을 확률로 바꾸는 과정은 다루지 않고 Class별 최종 점수라는 의미까지만 이해했다.
+### 질문과 이해 수정: `nn.Module`은 기본으로 제공되는가?
 
----
+#### 처음 이해
 
-## `model(images)`와 `forward`
+PyTorch가 제공하는 기본 `nn.Module` 자체를 튜닝해 원하는 Model로 만드는 것으로 이해했다.
 
-### `forward`를 만들었는데 왜 직접 호출하지 않을까?
+#### 수정된 이해
 
-`nn.Module`을 상속한 Model은 다음과 같이 호출한다.
+`nn.Module`은 PyTorch가 기본으로 제공하는 Class지만 직접 수정하는 대상은 아니다. 이를 상속한 새로운 Model Class를 만들고 그 안에 원하는 Layer와 Forward 흐름을 정의한다.
 
 ```python
-logits = model(images)
+class SimpleMLP(nn.Module):
+    ...
 ```
 
-그러면 `nn.Module`의 내부 호출 과정을 거쳐 작성한 `forward(images)`가 실행된다.
-
-```text
-model(images)
-↓
-nn.Module의 호출 처리
-↓
-forward(images)
-↓
-logits 반환
-```
-
-PyTorch는 이 호출 과정에서 Module Hook 등 `forward` 전후에 필요한 기능을 처리할 수 있다. 따라서 일반적인 사용에서는 `model.forward(images)`를 직접 호출하지 않고 `model(images)`를 사용한다.
+Unity에서 `MonoBehaviour`를 상속해 새로운 Component를 만드는 것과 비슷하게 이해했다.
 
 ---
 
-## 중간 Shape를 출력한 디버깅
+### 이해 수정: Layer를 정적으로 만든다는 의미
 
-Model의 Shape 오류를 찾기 위해 처음에는 각 Layer를 지난 뒤 Shape를 출력할 수 있다.
+#### 처음 이해
+
+Layer를 `__init__`에서 정적으로 만들어둔다고 이해했다.
+
+#### 수정된 이해
+
+Layer의 구조와 종류를 `__init__`에서 미리 정의한다는 의미에서는 맞다. 하지만 Linear 내부의 Weight와 Bias는 고정되지 않고 학습하면서 계속 변경된다.
+
+`__init__`에서는 Model이 사용할 Layer를 준비하고, `forward`에서는 이미 만든 Layer를 어떤 순서로 사용할지 작성한다.
 
 ```python
 def forward(self, x):
-    print("input  :", x.shape)
-
-    x = self.flatten(x)
-    print("flatten:", x.shape)
-
     x = self.fc1(x)
-    print("fc1    :", x.shape)
-
     x = self.relu(x)
-    print("relu   :", x.shape)
-
-    logits = self.fc2(x)
-    print("fc2    :", logits.shape)
-
-    return logits
-```
-
-예상 출력은 다음과 같다.
-
-```text
-input  : torch.Size([8, 1, 28, 28])
-flatten: torch.Size([8, 784])
-fc1    : torch.Size([8, 128])
-relu   : torch.Size([8, 128])
-fc2    : torch.Size([8, 10])
-```
-
-학습 초기와 디버깅 단계에서는 유용하지만, 확인이 끝난 뒤에도 모든 Forward마다 불필요한 출력이 발생하지 않도록 최종 Model에서는 지나치게 많은 `print`를 제거한다.
-
----
-
-## Parameter 수와 출력 Shape 검증
-
-Model에서 학습 대상으로 설정된 Parameter 수는 다음과 같이 계산할 수 있다.
-
-```python
-def count_parameters(model):
-    return sum(
-        p.numel()
-        for p in model.parameters()
-        if p.requires_grad
-    )
-```
-
-`model.parameters()`는 Model에 등록된 Parameter를 순회하고, `p.numel()`은 각 Parameter Tensor의 원소 수를 센다. `p.requires_grad` 조건을 사용하면 그중 Gradient 계산이 활성화된 Parameter만 합산한다.
-
-출력 Shape는 `assert`로 검증할 수 있다.
-
-```python
-expected_shape = (8, 10)
-assert logits.shape == expected_shape
-```
-
-조건이 거짓이면 즉시 `AssertionError`가 발생하므로 학습 전에 Model의 출력 규격이 예상과 같은지 확인할 수 있다.
-
-```text
-Model 생성
-↓
-더미 입력 생성
-↓
-Forward 실행
-↓
-출력 Shape 검증
-↓
-문제가 없으면 학습
-```
-
----
-
-## `TinyMLP` 구현에서 겪은 문제
-
-### 첫 번째 시도: `forward`에서 Layer 다시 만들기
-
-처음에는 `forward` 안에서 새로운 Layer를 만들려고 했다.
-
-```python
-def forward(self, x):
-    self.fc1 = nn.Linear(self.input_dim, self.output_dim)
-    self.relu = nn.ReLU()
-    self.fc2 = nn.Linear(self.input_dim, self.output_dim)
-    return self.fc2(self.fc1(x))
-```
-
-이 코드에는 다음 문제가 있었다.
-
-- 실행할 때마다 `forward` 안에서 Layer를 새로 만든다.
-- `self.input_dim`과 `self.output_dim`을 속성으로 저장한 적이 없다.
-- 만들어 둔 ReLU를 실제 계산 순서에 적용하지 않았다.
-- `fc1`의 출력 차원과 `fc2`의 입력 차원이 이어진다는 구조가 반영되지 않았다.
-
-Layer를 Forward마다 다시 만들면 같은 Parameter를 반복해서 학습하는 Model이 되지 않는다. Model이 학습할 Layer는 `__init__`에서 한 번 만들고 등록해야 한다.
-
-### 두 번째 시도: 정의하지 않은 ReLU 호출
-
-두 번째 시도는 다음과 같았다.
-
-```python
-def forward(self, x):
-    x = self.fc1(x)
-    x = self.ReLU()
     x = self.fc2(x)
+    return x
 ```
 
-여기에도 세 가지 문제가 있었다.
+Forward 안에서 새로운 Linear를 만들지 않고 `self.fc1`, `self.fc2`처럼 미리 등록한 Layer를 사용한다.
 
-- `self.ReLU`를 `__init__`에서 정의하지 않았다.
-- ReLU에 변환할 입력 `x`를 전달하지 않았다.
-- 계산 결과를 돌려주는 `return`이 빠졌다.
+---
 
-### 수정한 `TinyMLP`
+### 이해한 내용: Tensor Shape와 `input_dim`
 
-최종적으로 Layer 생성과 실행을 분리해 다음과 같이 수정했다.
+28×28 흑백 이미지 8장을 입력하면 Batch Size `8`은 유지되고 Feature 차원만 바뀐다. ReLU는 값을 바꾸지만 Shape는 바꾸지 않는다.
+
+```text
+(8, 1, 28, 28)
+→ (8, 784)
+→ (8, 128)
+→ (8, 128)
+→ (8, 10)
+```
+
+Flatten 이후 Feature 수와 첫 Linear가 기대하는 `input_dim`은 같아야 한다.
+
+```text
+1 × 28 × 28 = 784
+```
+
+```python
+nn.Linear(784, hidden_dim)
+```
+
+`input_dim=28`로 지정하면 실제 입력의 마지막 차원 `784`와 Layer가 기대하는 크기가 달라 오류가 발생한다.
+
+---
+
+### 이해 수정: `TinyMLP` 구현
+
+#### 처음 시도
+
+`forward()` 안에서 `nn.Linear`와 ReLU를 새로 만들려고 했다.
+
+#### 수정된 이해
+
+Layer는 `__init__`에서 미리 준비하고 `forward`에서는 `fc1 → ReLU → fc2 → return` 순서로 실행해야 한다.
 
 ```python
 class TinyMLP(nn.Module):
@@ -362,96 +138,42 @@ class TinyMLP(nn.Module):
         super().__init__()
 
         self.fc1 = nn.Linear(input_dim, hidden_dim)
-        self.relu = nn.ReLU()
         self.fc2 = nn.Linear(hidden_dim, output_dim)
+        self.relu = nn.ReLU()
 
     def forward(self, x):
         x = self.fc1(x)
         x = self.relu(x)
         x = self.fc2(x)
-
         return x
 ```
 
-실행 코드는 다음과 같다.
-
-```python
-model = TinyMLP(4, 8, 3)
-x = torch.randn(5, 4)
-
-logits = model(x)
-
-print("logits shape:", logits.shape)
-```
-
-Shape 흐름은 다음과 같다.
+입력이 `(5, 4)`이고 Model이 `TinyMLP(4, 8, 3)`이면 Shape는 다음과 같이 흐른다.
 
 ```text
 (5, 4)
-↓ fc1: 4 → 8
-(5, 8)
-↓ ReLU
-(5, 8)
-↓ fc2: 8 → 3
-(5, 3)
-```
-
-```text
-logits shape: torch.Size([5, 3])
-```
-
-이번 구현을 통해 다시 확인한 역할은 다음과 같다.
-
-```text
-Layer 생성
-→ __init__
-
-Layer 실행
-→ forward
-
-Forward 마지막
-→ 결과 return
+→ (5, 8)
+→ (5, 8)
+→ (5, 3)
 ```
 
 ---
 
-## `output_dim`과 Class 수 확인
+### 질문: `output_dim`을 Class 수와 맞추는 문제는 별도 구현이 필요한가?
 
-다음 연습은 새로운 Model을 구현하는 문제가 아니라 최종 출력 차원과 Class 수가 같은지 확인하는 문제였다.
+새로운 Model을 구현하는 문제라기보다 이미 계산된 Logits의 마지막 차원과 Class 수가 같은지 확인하는 문제다.
 
 ```python
 num_classes = 3
 
-print("num_classes:", num_classes)
-print("model output dim:", logits.shape[-1])
+print(num_classes)
+print(logits.shape[-1])
 ```
 
-`TinyMLP(4, 8, 3)`의 마지막 인자 3은 `output_dim`이다. 따라서 출력 `logits`의 Shape는 `(5, 3)`이고 마지막 차원도 3이다.
+`TinyMLP(4, 8, 3)`의 마지막 인자 `3`이 `output_dim`이고 최종 Logits의 Shape가 `(5, 3)`이므로 다음 관계가 성립한다.
 
 ```text
 num_classes
-= 마지막 Linear의 out_features
+= output_dim
 = logits.shape[-1]
 ```
-
-코드로 관계를 검증할 수도 있다.
-
-```python
-assert logits.shape[-1] == num_classes
-```
-
----
-
-## 다시 볼 때 핵심
-
-`nn.Module`은 수정하는 대상이 아니라 상속하여 나만의 Model을 만드는 Base Class다.
-
-`__init__`에서는 Layer를 만들고 Model에 등록하며, `forward`에서는 이미 만든 Layer에 입력을 순서대로 통과시킨다. Forward 안에서 매번 새로운 Linear를 만들지 않는다.
-
-Model의 Layer 구조는 미리 정하지만 Layer 내부의 Weight와 Bias는 학습하면서 바뀐다.
-
-`model(x)`를 호출하면 `nn.Module`의 내부 호출 처리를 거쳐 `forward(x)`가 실행되므로 일반적으로 `model.forward(x)`를 직접 호출하지 않는다.
-
-`SimpleMLP`에 더미 입력을 통과시켜 Flatten 결과와 각 Linear의 입출력 차원이 올바르게 연결되는지 확인했다.
-
-분류 Model에서는 `num_classes`, 마지막 Linear의 `out_features`, `logits.shape[-1]`이 서로 같아야 한다.
