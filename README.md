@@ -24,6 +24,7 @@
 - [선형대수 종합 미니 프로젝트](Math/12-선형대수-종합-미니-프로젝트.md)
 - [벡터·행렬·텐서와 딥러닝 Shape 표기](Math/13-벡터-행렬-텐서와-딥러닝-shape-표기.md)
 - [Reshape·Transpose·Broadcasting과 행렬곱 Shape 추론](Math/14-reshape-transpose-broadcasting과-행렬곱-shape-추론.md)
+- [Attention Score: 내적과 QKᵀ Shape 추론](Math/15-attention-score-내적과-qk-transpose-shape-추론.md)
 
 
 ## 머신러닝
