@@ -52,6 +52,7 @@
 - [MLP Forward 미니 구현](DeepLearningBasic/3-5-mlp-forward-미니-구현.md)
 - [비선형성과 활성화 함수의 필요성](DeepLearningBasic/4-1-비선형성과-활성화-함수-필요성.md)
 - [ReLU의 역할과 사용 위치](DeepLearningBasic/4-2-relu의-역할과-사용-위치.md)
+- [Sigmoid와 이진 분류 출력층](DeepLearningBasic/4-3-sigmoid와-이진-분류-출력층.md)
 - [손실 함수의 역할과 목표 함수](DeepLearningBasic/5-1-손실-함수의-역할과-목표-함수.md)
 
 
