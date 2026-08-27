@@ -27,6 +27,7 @@
 - [Attention Score: 내적과 QKᵀ Shape 추론](Math/15-attention-score-내적과-qk-transpose-shape-추론.md)
 - [Softmax·로그확률·Cross Entropy](Math/16-softmax-로그확률과-cross-entropy.md)
 - [미분·편미분·Gradient와 Gradient Descent](Math/17-미분-편미분-gradient와-gradient-descent.md)
+- [Chain Rule과 Backpropagation](Math/18-chain-rule과-backpropagation.md)
 
 
 ## 머신러닝
