@@ -55,6 +55,7 @@
 - [Sigmoid와 이진 분류 출력층](DeepLearningBasic/4-3-sigmoid와-이진-분류-출력층.md)
 - [Softmax와 다중 분류 출력층](DeepLearningBasic/4-4-softmax와-다중-분류-출력층.md)
 - [손실 함수의 역할과 목표 함수](DeepLearningBasic/5-1-손실-함수의-역할과-목표-함수.md)
+- [회귀·이진·다중 분류 손실 선택](DeepLearningBasic/5-2-회귀-이진-다중-분류-손실-선택.md)
 
 
 ## 딥러닝 심화
