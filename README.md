@@ -58,6 +58,7 @@
 - [회귀·이진·다중 분류 손실 선택](DeepLearningBasic/5-2-회귀-이진-다중-분류-손실-선택.md)
 - [SGD, Adam과 Learning Rate](DeepLearningBasic/5-3-sgd-adam과-learning-rate.md)
 - [파라미터 업데이트 코드 흐름](DeepLearningBasic/5-4-파라미터-업데이트-코드-흐름.md)
+- [계산 그래프와 Chain Rule](DeepLearningBasic/6-1-계산-그래프와-chain-rule.md)
 
 
 ## 딥러닝 심화
