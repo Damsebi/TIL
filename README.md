@@ -59,6 +59,7 @@
 - [SGD, Adam과 Learning Rate](DeepLearningBasic/5-3-sgd-adam과-learning-rate.md)
 - [파라미터 업데이트 코드 흐름](DeepLearningBasic/5-4-파라미터-업데이트-코드-흐름.md)
 - [계산 그래프와 Chain Rule](DeepLearningBasic/6-1-계산-그래프와-chain-rule.md)
+- [`requires_grad`와 Tensor Gradient](DeepLearningBasic/6-2-requires-grad와-tensor-gradient.md)
 
 
 ## 딥러닝 심화
