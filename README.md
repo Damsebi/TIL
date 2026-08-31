@@ -37,27 +37,44 @@
 
 ## 딥러닝 기초
 
+### Part 1. 딥러닝 입문과 전체 흐름
+
 - [머신러닝과 딥러닝의 차이](DeepLearningBasic/1-1-머신러닝과-딥러닝의-차이.md)
 - [데이터·모델·손실·최적화·평가 흐름](DeepLearningBasic/1-2-데이터-모델-손실-최적화-평가-흐름.md)
 - [딥러닝 문제 유형과 입출력 구조 설계](DeepLearningBasic/1-3-딥러닝-문제-유형과-입출력-구조-설계.md)
 - [기본 코드 구조 읽기](DeepLearningBasic/1-4-기본-코드-구조-읽기.md)
+
+### Part 2. Tensor와 실행 환경
+
 - [Tensor 생성과 dtype·shape 확인](DeepLearningBasic/2-1-tensor-생성과-dtype-shape-확인.md)
 - [Batch Dimension과 Broadcasting](DeepLearningBasic/2-2-batch-dimension과-broadcasting.md)
 - [CPU·GPU Device와 `.to(device)`](DeepLearningBasic/2-3-cpu-gpu-device와-to-device.md)
 - [Shape·Device 오류 디버깅](DeepLearningBasic/2-4-shape-device-오류-디버깅.md)
+
+### Part 3. 퍼셉트론과 MLP 구조
+
 - [퍼셉트론과 선형 결정 경계](DeepLearningBasic/3-1-퍼셉트론과-선형-결정-경계.md)
 - [MLP의 입력층·은닉층·출력층](DeepLearningBasic/3-2-mlp-입력층-은닉층-출력층.md)
 - [가중치·편향과 `nn.Linear`](DeepLearningBasic/3-3-가중치-편향과-nn-linear.md)
 - [입출력 차원 계산과 Flatten](DeepLearningBasic/3-4-입출력-차원-계산과-flatten.md)
 - [MLP Forward 미니 구현](DeepLearningBasic/3-5-mlp-forward-미니-구현.md)
+
+### Part 4. 활성화 함수와 분류 출력층
+
 - [비선형성과 활성화 함수의 필요성](DeepLearningBasic/4-1-비선형성과-활성화-함수-필요성.md)
 - [ReLU의 역할과 사용 위치](DeepLearningBasic/4-2-relu의-역할과-사용-위치.md)
 - [Sigmoid와 이진 분류 출력층](DeepLearningBasic/4-3-sigmoid와-이진-분류-출력층.md)
 - [Softmax와 다중 분류 출력층](DeepLearningBasic/4-4-softmax와-다중-분류-출력층.md)
+
+### Part 5. 손실 함수와 Optimizer
+
 - [손실 함수의 역할과 목표 함수](DeepLearningBasic/5-1-손실-함수의-역할과-목표-함수.md)
 - [회귀·이진·다중 분류 손실 선택](DeepLearningBasic/5-2-회귀-이진-다중-분류-손실-선택.md)
 - [SGD, Adam과 Learning Rate](DeepLearningBasic/5-3-sgd-adam과-learning-rate.md)
 - [파라미터 업데이트 코드 흐름](DeepLearningBasic/5-4-파라미터-업데이트-코드-흐름.md)
+
+### Part 6. Autograd와 Gradient 계산
+
 - [계산 그래프와 Chain Rule](DeepLearningBasic/6-1-계산-그래프와-chain-rule.md)
 - [`requires_grad`와 Tensor Gradient](DeepLearningBasic/6-2-requires-grad와-tensor-gradient.md)
 - [`loss.backward()`와 `.grad` 확인](DeepLearningBasic/6-3-loss-backward와-grad-확인.md)
