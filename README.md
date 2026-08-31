@@ -81,5 +81,9 @@
 - [`zero_grad`, `backward`, `step` 순서](DeepLearningBasic/6-4-zero-grad-backward-step-순서.md)
 - [Autograd 디버깅과 안전한 평가 코드](DeepLearningBasic/6-5-autograd-디버깅과-안전한-평가-코드.md)
 
+### Part 7. 데이터 파이프라인
+
+- [Dataset과 DataLoader 역할](DeepLearningBasic/7-1-dataset과-dataloader-역할.md)
+
 
 ## 딥러닝 심화
