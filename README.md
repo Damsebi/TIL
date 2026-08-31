@@ -84,6 +84,7 @@
 ### Part 7. 데이터 파이프라인
 
 - [Dataset과 DataLoader 역할](DeepLearningBasic/7-1-dataset과-dataloader-역할.md)
+- [TensorDataset과 Custom Dataset](DeepLearningBasic/7-2-tensordataset과-custom-dataset.md)
 
 
 ## 딥러닝 심화
