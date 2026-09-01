@@ -86,6 +86,7 @@
 - [Dataset과 DataLoader 역할](DeepLearningBasic/7-1-dataset과-dataloader-역할.md)
 - [TensorDataset과 Custom Dataset](DeepLearningBasic/7-2-tensordataset과-custom-dataset.md)
 - [Transform과 전처리 흐름](DeepLearningBasic/7-3-transform과-전처리-흐름.md)
+- [Batch Size, Shuffle과 Train·Valid·Test 분할](DeepLearningBasic/7-4-batch-size-shuffle과-train-valid-test-분할.md)
 
 
 ## 딥러닝 심화
