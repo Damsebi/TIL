@@ -1,4 +1,4 @@
-# MLP 모델과 Train·Validation Loop (8-1~8-5)
+# MLP 모델과 Train·Validation Loop
 
 > 학습일: 2026-08-26
 
