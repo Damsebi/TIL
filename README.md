@@ -97,6 +97,7 @@
 
 - [MLP 모델과 Train·Validation Loop](DeepLearningBasic/8-1-8-5-mlp-모델과-train-validation-loop.md)
 - [Accuracy와 Metric 누적](DeepLearningBasic/8-6-accuracy와-metric-누적.md)
+- [MLP 종합 실습](DeepLearningBasic/8-8-mlp-종합-실습.md)
 
 
 ## 딥러닝 심화
