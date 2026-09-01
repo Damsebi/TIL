@@ -30,6 +30,11 @@
 - [Chain Rule과 Backpropagation](Math/18-chain-rule과-backpropagation.md)
 
 
+## NumPy
+
+- [Dim, Axis와 Argmax Shape](NumPy/1-dim-axis와-argmax-shape.md)
+
+
 ## 머신러닝
 
 - [하이퍼파라미터 탐색과 교차검증](MachineLearning/5-하이퍼파라미터-탐색과-교차검증.md)
