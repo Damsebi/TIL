@@ -90,7 +90,7 @@
 
 ### Part 8. 모델 학습 Loop 완성
 
-- [MLP 모델과 Train·Validation Loop (8-1~8-5)](DeepLearningBasic/8-1-8-5-mlp-모델과-train-validation-loop.md)
+- [MLP 모델과 Train·Validation Loop](DeepLearningBasic/8-1-8-5-mlp-모델과-train-validation-loop.md)
 
 
 ## 딥러닝 심화
