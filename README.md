@@ -101,7 +101,8 @@
 
 ### Part 9. 재현성과 실험 관리
 
-- [Seed 고정과 Logging·Checkpoint 설계](DeepLearningBasic/9-1-9-3-seed-고정과-logging-checkpoint-설계.md)
+- [Seed 고정과 Logging 설계](DeepLearningBasic/9-1-9-2-seed-고정과-logging-설계.md)
+- [Checkpoint 저장과 학습 재개](DeepLearningBasic/9-3-9-4-checkpoint-저장과-학습-재개.md)
 
 
 ## 딥러닝 심화
