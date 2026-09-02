@@ -99,5 +99,9 @@
 - [Accuracy와 Metric 누적](DeepLearningBasic/8-6-accuracy와-metric-누적.md)
 - [MLP 종합 실습](DeepLearningBasic/8-8-mlp-종합-실습.md)
 
+### Part 9. 재현성과 실험 관리
+
+- [Seed 고정과 재현성](DeepLearningBasic/9-1-seed-고정과-재현성.md)
+
 
 ## 딥러닝 심화
