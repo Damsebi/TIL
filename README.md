@@ -104,5 +104,9 @@
 - [Seed 고정과 Logging 설계](DeepLearningBasic/9-1-9-2-seed-고정과-logging-설계.md)
 - [Checkpoint 저장과 학습 재개](DeepLearningBasic/9-3-9-4-checkpoint-저장과-학습-재개.md)
 
+### Part 10. 학습 진단과 일반화
+
+- [학습 곡선과 과적합·과소적합](DeepLearningBasic/10-1-10-2-학습-곡선과-과적합-과소적합.md)
+
 
 ## 딥러닝 심화
