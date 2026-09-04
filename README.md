@@ -107,6 +107,7 @@
 ### Part 10. 학습 진단과 일반화
 
 - [학습 곡선과 과적합·과소적합](DeepLearningBasic/10-1-10-2-학습-곡선과-과적합-과소적합.md)
+- [Dropout과 BatchNorm 적용](DeepLearningBasic/10-3-10-4-dropout과-batchnorm-적용.md)
 
 
 ## 딥러닝 심화
