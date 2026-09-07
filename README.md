@@ -124,6 +124,7 @@
 ### Part 13. RNN과 Sequence Data
 
 - [Sequence Data와 RNN Hidden State](DeepLearningBasic/13-1-13-2-sequence-data와-rnn-hidden-state.md)
+- [장기 의존성과 LSTM·Transformer 등장 배경](DeepLearningBasic/13-3-13-5-장기-의존성과-lstm-transformer-등장-배경.md)
 
 
 ## 딥러닝 심화
