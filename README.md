@@ -121,5 +121,9 @@
 - [GPU Memory와 CNN 구조 실험](DeepLearningBasic/12-3-12-4-gpu-memory와-cnn-구조-실험.md)
 - [MLP Baseline과 CNN 성능 비교·리포팅](DeepLearningBasic/12-5-12-7-mlp-baseline과-cnn-성능-비교-리포팅.md)
 
+### Part 13. RNN과 Sequence Data
+
+- [Sequence Data와 RNN Hidden State](DeepLearningBasic/13-1-13-2-sequence-data와-rnn-hidden-state.md)
+
 
 ## 딥러닝 심화
