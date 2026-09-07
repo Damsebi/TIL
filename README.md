@@ -115,5 +115,9 @@
 - [이미지 구조와 Convolution·Padding·Stride](DeepLearningBasic/11-1-11-3-이미지-구조와-convolution-padding-stride.md)
 - [Pooling과 Feature Map Shape·Classifier 연결](DeepLearningBasic/11-4-11-6-pooling과-feature-map-shape-classifier-연결.md)
 
+### Part 12. CNN 모델 학습
+
+- [CNN 모델 설계와 학습 파이프라인](DeepLearningBasic/12-1-12-2-cnn-모델-설계와-학습-파이프라인.md)
+
 
 ## 딥러닝 심화
