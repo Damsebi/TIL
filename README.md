@@ -119,6 +119,7 @@
 
 - [CNN 모델 설계와 학습 파이프라인](DeepLearningBasic/12-1-12-2-cnn-모델-설계와-학습-파이프라인.md)
 - [GPU Memory와 CNN 구조 실험](DeepLearningBasic/12-3-12-4-gpu-memory와-cnn-구조-실험.md)
+- [MLP Baseline과 CNN 성능 비교·리포팅](DeepLearningBasic/12-5-12-7-mlp-baseline과-cnn-성능-비교-리포팅.md)
 
 
 ## 딥러닝 심화
