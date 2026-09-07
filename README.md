@@ -118,6 +118,7 @@
 ### Part 12. CNN 모델 학습
 
 - [CNN 모델 설계와 학습 파이프라인](DeepLearningBasic/12-1-12-2-cnn-모델-설계와-학습-파이프라인.md)
+- [GPU Memory와 CNN 구조 실험](DeepLearningBasic/12-3-12-4-gpu-memory와-cnn-구조-실험.md)
 
 
 ## 딥러닝 심화
