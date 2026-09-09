@@ -133,3 +133,7 @@
 
 - [Prompt-only Baseline 설계](DeepLearningAdvanced/8-2-prompt-only-baseline-설계.md)
 - [Fine-tuning과 PEFT 적용 기준](DeepLearningAdvanced/8-3-8-4-fine-tuning과-peft-적용-기준.md)
+
+### Part 9. 텍스트 생성과 Decoding
+
+- [텍스트 생성과 Decoding·Generation Parameter](DeepLearningAdvanced/9-1-9-3-텍스트-생성과-decoding-generation-parameter.md)
