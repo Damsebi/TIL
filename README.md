@@ -129,6 +129,7 @@
 
 ## 딥러닝 심화
 
-### Part 8. Prompt-only Baseline
+### Part 8. Prompting과 Fine-tuning
 
 - [Prompt-only Baseline 설계](DeepLearningAdvanced/8-2-prompt-only-baseline-설계.md)
+- [Fine-tuning과 PEFT 적용 기준](DeepLearningAdvanced/8-3-8-4-fine-tuning과-peft-적용-기준.md)
