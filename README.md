@@ -128,3 +128,7 @@
 
 
 ## 딥러닝 심화
+
+### Part 8. Prompt-only Baseline
+
+- [Prompt-only Baseline 설계](DeepLearningAdvanced/8-2-prompt-only-baseline-설계.md)
