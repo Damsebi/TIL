@@ -137,3 +137,4 @@
 ### Part 9. 텍스트 생성과 Decoding
 
 - [텍스트 생성과 Decoding·Generation Parameter](DeepLearningAdvanced/9-1-9-3-텍스트-생성과-decoding-generation-parameter.md)
+- [Chat Template과 입력 디버깅](DeepLearningAdvanced/9-4-9-5-chat-template과-입력-디버깅.md)
