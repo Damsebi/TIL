@@ -138,3 +138,10 @@
 
 - [텍스트 생성과 Decoding·Generation Parameter](DeepLearningAdvanced/9-1-9-3-텍스트-생성과-decoding-generation-parameter.md)
 - [Chat Template과 입력 디버깅](DeepLearningAdvanced/9-4-9-5-chat-template과-입력-디버깅.md)
+
+
+## 딥러닝 실습
+
+### Part 1. Softmax와 손실 계산
+
+- [Softmax와 수치 안정성·Log Probability](DeepLearningPractice/1-1-softmax와-수치-안정성-log-probability.md)
