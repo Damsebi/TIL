@@ -145,3 +145,4 @@
 ### Part 1. Softmax와 손실 계산
 
 - [Softmax와 수치 안정성·Log Probability](DeepLearningPractice/1-1-softmax와-수치-안정성-log-probability.md)
+- [손실 함수와 샘플별 CE·MSE·BCE 계산](DeepLearningPractice/1-2-손실-함수와-샘플별-ce-mse-bce-계산.md)
