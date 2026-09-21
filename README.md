@@ -146,3 +146,10 @@
 
 - [Softmax와 수치 안정성·Log Probability](DeepLearningPractice/1-1-softmax와-수치-안정성-log-probability.md)
 - [손실 함수와 샘플별 CE·MSE·BCE 계산](DeepLearningPractice/1-2-손실-함수와-샘플별-ce-mse-bce-계산.md)
+
+
+## 데이터 수집 & API 서버 구축
+
+### Part 1. 데이터 수집과 API 서버의 전체 흐름
+
+- [데이터 수집부터 API 서버까지의 전체 흐름](DataCollectionAPI/1-1-데이터-수집부터-api-서버까지-전체-흐름.md)
