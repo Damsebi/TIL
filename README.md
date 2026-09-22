@@ -153,3 +153,8 @@
 ### Part 1. 데이터 수집과 API·RAG 기초
 
 - [데이터 수집과 API·RAG 기초](DataCollectionAPI/1-1-데이터-수집과-api-rag-기초.md)
+
+### Part 2. HTTP와 Python API 호출
+
+- [HTTP 요청·응답과 API 문서 읽기](DataCollectionAPI/2-1-http-요청-응답과-api-문서-읽기.md)
+- [Python API 호출과 인증·환경변수](DataCollectionAPI/2-2-python-api-호출과-인증-환경변수.md)
