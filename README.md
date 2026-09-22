@@ -150,6 +150,6 @@
 
 ## 데이터 수집 & API 서버 구축
 
-### Part 1. 데이터 수집과 API 서버의 전체 흐름
+### Part 1. 데이터 수집과 API·RAG 기초
 
-- [데이터 수집부터 API 서버까지의 전체 흐름](DataCollectionAPI/1-1-데이터-수집부터-api-서버까지-전체-흐름.md)
+- [데이터 수집과 API·RAG 기초](DataCollectionAPI/1-1-데이터-수집과-api-rag-기초.md)
