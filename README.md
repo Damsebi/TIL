@@ -165,3 +165,7 @@
 ### Part 1. LangChain 앱 구조와 개발 환경
 
 - [LangChain 앱 구조와 개발 환경](LangChain/1-1-1-2-langchain-앱-구조와-개발-환경.md)
+
+### Part 2. Prompt Template과 Output Parser
+
+- [Prompt Template과 ChatModel·Output Parser](LangChain/2-1-2-2-prompt-template과-output-parser.md)
