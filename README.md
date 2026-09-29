@@ -161,3 +161,7 @@
 
 
 ## LangChain
+
+### Part 1. LangChain 앱 구조와 개발 환경
+
+- [LangChain 앱 구조와 개발 환경](LangChain/1-1-1-2-langchain-앱-구조와-개발-환경.md)
