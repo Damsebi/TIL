@@ -169,3 +169,10 @@
 ### Part 2. Prompt Template과 Output Parser
 
 - [Prompt Template과 ChatModel·Output Parser](LangChain/2-1-2-2-prompt-template과-output-parser.md)
+
+
+## RAG 기초 / 심화
+
+### Part 1. RAG의 필요성과 검색 파이프라인·선택 기준
+
+- [RAG의 필요성과 검색 파이프라인·선택 기준](RAG/1-1-1-4-rag-필요성과-검색-파이프라인-선택-기준.md)
