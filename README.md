@@ -2,6 +2,11 @@
 
 공부하면서 헷갈렸거나, 나중에 다시 찾아볼 내용을 정리합니다.
 
+## 과제
+
+- [CH2. 프롬프트 엔지니어링 / 데이터 수집 & API 서버 구축 / LangChain](Assignment/README.md)
+
+
 ## Git
 
 - [Git 기본 명령어](Git/1-Git-기본-명령어.md)
