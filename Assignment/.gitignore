@@ -1,0 +1,6 @@
+# 과목 폴더에서는 직접 작성한 구현 파일과 AI 사용 기록만 올린다
+# (제공 코드, data/, artifacts/, .env, .venv/ 등은 모두 제외)
+/*/*
+!/*/main.py
+!/*/app.py
+!/*/AI_USAGE.md
