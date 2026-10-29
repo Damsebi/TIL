@@ -4,7 +4,7 @@
 
 | 항목 | 내용 |
 | --- | --- |
-| 제출 기간 | 10/13(화) ~ 10/27(화) |
+| 제출 기간 | 10/13(화) ~ 11/2(월) (10/27에서 연장) |
 | 제출 파일 | 과목별 구현 파일(`main.py` 또는 `app.py`) + `AI_USAGE.md` |
 | 실행 환경 | VS Code + uv + Python 3.12 |
 | 과제 사이트 | [DevDesk 과제 웹사이트](https://private-llm-assignment.vercel.app/) · [과제 목록](https://private-llm-assignment.vercel.app/assignments/) · [제출 안내](https://private-llm-assignment.vercel.app/submission/) |
@@ -12,13 +12,15 @@
 
 ## 폴더 구성
 
-과목별 학생용 ZIP을 아래 폴더에 각각 풀어서 작업합니다.
+과목별 학생용 ZIP을 `Assignment/`에 풀고, 생긴 폴더(`kant-next-...-student/`) 이름을 아래처럼 바꿔서 작업합니다.
 
 | 폴더 | 과목 | 구현 파일 |
 | --- | --- | --- |
 | `CH2-PromptEngineering/` | 프롬프트 엔지니어링 | `main.py` |
 | `CH2-DataCollectionAPI/` | 데이터 수집 & API 서버 구축 | `app.py` |
 | `CH2-LangChain/` | LangChain | `main.py` |
+
+`.gitignore` 설정으로 과목 폴더에서는 직접 작성한 구현 파일(`main.py` / `app.py`)과 `AI_USAGE.md`만 커밋됩니다. 제공 코드, `data/`, `artifacts/`, `.env`, `.venv/`는 자동으로 제외됩니다.
 
 
 ## 공통 실행 흐름
@@ -33,7 +35,6 @@ uv run --frozen python main.py demo   # 데이터 수집 & API 과제는 app.py
 
 - `check`에는 `--live`를 붙이지 않는다.
 - `support.py`, `checks.py`, `data/`는 수정하지 않는다.
-- `.env`, `.venv/`, `__pycache__/`, `artifacts/`는 커밋하지 않는다 (`.gitignore`로 제외).
 
 아래 체크리스트의 괄호 안은 `run` / `check` 기능명입니다.
 
