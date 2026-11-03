@@ -138,6 +138,10 @@
 
 - [RNN·LSTM에서 Transformer로, 미니 LLM 개발 흐름](DeepLearningAdvanced/1-1-1-2-transformer-필요성과-미니-llm-워크플로우.md)
 
+### Part 2. Tokenizer와 Text Dataset
+
+- [Tokenizer와 Text Dataset](DeepLearningAdvanced/2-1-2-3-tokenizer와-text-dataset.md)
+
 ### Part 8. Prompting과 Fine-tuning
 
 - [Prompt-only Baseline 설계](DeepLearningAdvanced/8-2-prompt-only-baseline-설계.md)
