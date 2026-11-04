@@ -142,6 +142,10 @@
 
 - [Tokenizer와 Text Dataset](DeepLearningAdvanced/2-1-2-3-tokenizer와-text-dataset.md)
 
+### Part 3. Attention과 Multi-Head Self-Attention
+
+- [Q·K·V로 이해하는 Self-Attention 계산과 Context Vector](DeepLearningAdvanced/3-1-3-3-self-attention-계산과-context-vector.md)
+
 ### Part 8. Prompting과 Fine-tuning
 
 - [Prompt-only Baseline 설계](DeepLearningAdvanced/8-2-prompt-only-baseline-설계.md)
