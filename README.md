@@ -145,6 +145,7 @@
 ### Part 3. Attention과 Multi-Head Self-Attention
 
 - [Q·K·V로 이해하는 Self-Attention 계산과 Context Vector](DeepLearningAdvanced/3-1-3-3-self-attention-계산과-context-vector.md)
+- [Self-Attention 미니 구현과 Multi-Head Shape 디버깅](DeepLearningAdvanced/3-4-3-5-self-attention-구현과-multi-head-shape-디버깅.md)
 
 ### Part 8. Prompting과 Fine-tuning
 
