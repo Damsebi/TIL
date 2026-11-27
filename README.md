@@ -4,7 +4,8 @@
 
 ## 과제
 
-- [CH2. 프롬프트 엔지니어링 / 데이터 수집 & API 서버 구축 / LangChain](Assignment/README.md)
+- [CH2. 프롬프트 엔지니어링 / 데이터 수집 & API 서버 구축 / LangChain](Assignment/CH2/README.md)
+- [CH3. RAG / Context Engineering / LLMOps](Assignment/CH3/)
 
 
 ## Git
